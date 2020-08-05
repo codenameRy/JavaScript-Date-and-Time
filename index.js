@@ -74,3 +74,39 @@ function getLastDayOfMonth(year, month) {
 alert( getLastDayOfMonth(2012, 0) ); // 31
 alert( getLastDayOfMonth(2012, 1) ); // 29
 alert( getLastDayOfMonth(2013, 1) ); // 28
+
+//Challenge 6 - How many seconds have passed today?
+
+// Write a function getSecondsToday() that returns the number of seconds from the beginning of today.
+
+// For instance, if now were 10:00 am, and there was no daylight savings shift, then: 10AM - 12AM = 10 hours x 60 minutes x 60 = 36000
+
+//Solution 1 - Current date and time with difference
+function getSecondsToday() {
+let now = new Date();
+
+  // create an object using the current day/month/year
+let today = new Date(now.getFullYear(), now.getMonth(), now.getDate() )
+
+let diff = now - today; //ms difference
+return Math.round(diff / 1000); //convert to seconds
+}
+alert (getSecondsToday())
+// == 36000 // (3600 * 10)
+
+//Solution 2 - Get hours/minutes/seconds and convert them to seconds
+
+function getSecondsToday2() {
+  let d = new Date();
+  return d.getHours() * 3600 + d.getMinutes() * 60 + d.getSeconds();
+}
+
+alert( getSecondsToday2() );
+
+//Challenge 7 - How many seconds till tomorrow?
+
+// Create a function getSecondsToTomorrow() that returns the number of seconds till tomorrow.
+
+// For instance, if now is 23:00, then: getSecondsToTomorrow() == 3600
+
+functiongetSecondsToTomorrow()
